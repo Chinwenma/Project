@@ -1,10 +1,5 @@
 /***
- Theme Name: iori
- Description: Multipurpose Startup & SaaS HTML Template
- Version: 1.0
- License: GNU General Public License v2 or later
- License URI: http://www.gnu.org/licenses/gpl-2.0.html
-==============================
+
 TABLE CONTENT
  Import Google Fonts
  Include Third Party CSS Library
@@ -133,6 +128,7 @@ video {
 main {
   display: block;
   clear: both;
+  margin-top:30rem;
 }
 
 thead {
