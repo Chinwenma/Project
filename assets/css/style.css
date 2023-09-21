@@ -133,6 +133,7 @@ video {
 main {
   display: block;
   clear: both;
+
 }
 
 thead {
@@ -155,6 +156,7 @@ section {
 
 body {
   line-height: 1;
+
 }
 
 ol,

@@ -1,13 +1,13 @@
-<header class="header sticky-bar shadow">
+<header class="header sticky-bar shadow bg-dark text-light">
     <div class="container">
-        <div class="main-header">
-            <div class="header-logo"> <a class="d-flex" href="index.html"><img alt="luxride" src="assets/imgs/template/logo.svg"></a></div>
+        <div class="main-header ">
+            <div class="header-logo"> <a class="d-flex" href="index.html"><img alt="luxride" src="assets/imgs/template/mAtRix (1)_prev_ui.png" ></a></div>
             <div class="header-menu">
                 <div class="header-nav">
                     <nav class="nav-main-menu d-none d-xl-block">
                         <ul class="main-menu">
                             <li class="has-mega-menu"><a class="active" href="#">Home</a></li>
-                            <li class="has-children"><a href="#">Shop</a></li>
+                            <li class="has-children"><a href="signup.php">Shop</a></li>
                             <li class="has-mega-menu"><a href="#">Products</a></li>
                             <li class="has-children"><a href="#">Pages</a></li>
                             <li class="has-children"><a href="#">Blog</a></li>
