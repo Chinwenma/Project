@@ -1,7 +1,8 @@
 <?php
 session_start();
 include('../config/dbconnect.php');
-if (isset($_POST['sign_up_btn'])) {
+if (isset($_POST['sign_up_btn']))
+{
     $firstname = mysqli_real_escape_string($connection, $_POST['fisrtname']);
     $lastname = mysqli_real_escape_string($connection, $_POST['lastname']);
     $phone = mysqli_real_escape_string($connection, $_POST['phone']);
@@ -35,3 +36,30 @@ if (isset($_POST['sign_up_btn'])) {
         }
     }
 }
+elseif(isset($_POST['sign_in_btn']))
+{
+    $email = mysqli_real_escape_string($connection, $_POST['email']);
+    
+    $password = mysqli_real_escape_string($connection, $_POST['password']);
+    $login_query = "SELECT * FROM users WHERE email ='  $email'AND password = ' $password' ";
+    $login_query_run = mysqli_query($connection, $login_query);
+    if (mysqli_num_rows($login_query_run)> 0)
+    {
+    $_SESSION['auth']=true;
+    $userdata = mysqli_fetch_array($login_query_run );
+    $username =$userdata ['name'];
+    $_SESSION['auth_user']=[
+    'name' => $username,
+    'email' => $useremail
+    ];
+    $_SESSION['message'] = "loged in successfully";
+    header('location:../index.php');
+        }
+ else{
+    $_SESSION['message']="You are not logged in!";
+    header('location:../signin.php');
+    }
+
+}
+
+?>

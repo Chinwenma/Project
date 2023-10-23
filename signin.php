@@ -18,33 +18,21 @@ include('includes/header.php'); ?>
             unset($_SESSION['message']);
             }
             ?>
-            <div class="card ">
+            <div class="card">
                 <div class="card-header text-center">
-                    <h2>Sign Up!</h2>
+                    <h2>Sign In!</h2>
 
                 </div>
                 <div class="card-body">
-                    <form action="functions/authcode.php" method="POST">
-                        <div class="mb-3">
-                            <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="First Name" name="firstname">
-                        </div>
-
-                        <div class="mb-3">
-                            <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Last Name" name="lastname">
-                        </div>
-                        <div class="mb-3">
-                            <input type="number" class="form-control" aria-describedby="emailHelp" placeholder="Phone Number" name="phone">
-                        </div>
+                    <form action="functions/authcode.php" method="POST">                   
                         <div class="mb-3">
                             <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Email Address" name="email">
                         </div>
                         <div class="mb-3">
                             <input type="password" class="form-control" placeholder="Password" name="password">
                         </div>
-                        <div class="mb-3">
-                            <input type="password" class="form-control" placeholder="Confirm Password" name="confirm_password">
-                        </div>
-                        <div class="text-center"><button class="btn btn-primary" type="submit" name="sign_up_btn">Submit</button></div>
+                        
+                        <div class="text-center"><button class="btn btn-primary" type="submit" name="sign_in_btn">Sign In</button></div>
                     </form>
                 </div>
             </div>
