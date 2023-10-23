@@ -26,12 +26,9 @@ include('includes/header.php'); ?>
                 <div class="card-body">
                     <form action="functions/authcode.php" method="POST">
                         <div class="mb-3">
-                            <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="First Name" name="firstname">
+                            <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Full Name" name="name">
                         </div>
 
-                        <div class="mb-3">
-                            <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Last Name" name="lastname">
-                        </div>
                         <div class="mb-3">
                             <input type="number" class="form-control" aria-describedby="emailHelp" placeholder="Phone Number" name="phone">
                         </div>
