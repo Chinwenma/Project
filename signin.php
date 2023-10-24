@@ -1,6 +1,11 @@
 <?php
 session_start();
-
+if(isset($_SESSION['auth']))
+{
+    $_SESSION['message'] ="you are already logged in";
+    header('location: index.php');
+    exit();
+}
 include('includes/header.php'); ?>
 <div class="container mb-2 py-5" >
     <div class="row justify-content-center">
