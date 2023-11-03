@@ -1,16 +1,16 @@
 <?php
-
+include('../functions/myfunctions.php');
 if(isset($_SESSION['auth']))
 {
     if($_SESSION['role_as'] != 1)
     {
-        $_SESSION['message'] = "Not allowed";
-        header('location: ../index.php');
+        redirect("../index.php", "Not aloowed");
+        
     }
 
 }
 else{
-    $_SESSION['message'] = "signin to move on";
-    header('location: ../signin.php'); 
+    redirect("../signin.php", "signin  to continue");
+    
 }
 ?>

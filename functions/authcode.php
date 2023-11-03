@@ -1,6 +1,8 @@
 <?php
 session_start();
 include('../config/dbconnect.php');
+include('myfunctions.php');
+
 if (isset($_POST['sign_up_btn'])) {
     $name = mysqli_real_escape_string($connection, $_POST['name']);
     $phone = mysqli_real_escape_string($connection, $_POST['phone']);
@@ -52,18 +54,19 @@ if (isset($_POST['sign_up_btn'])) {
             'email' => $useremail
         ];
         $_SESSION['role_as'] = $role_as;
+
         if ($role_as == 1)
          {
-            $_SESSION['message'] = "welcome";
-            header('location: ../admin/index.php');
-        } else {
-            $_SESSION['message'] = "loged in successfully";
-            header('location: ../index.php');
+          redirect("../admin/index.php","welcome ");
+        } 
+        else 
+        {
+            redirect("../index.php","logged in successfully ");
         }
        
     } else {
-        $_SESSION['message'] = "You are not logged in!";
-        header('location: ../signin.php');
+        redirect("../signin.php","invalid credential ");
+
     }
 }
 ?>

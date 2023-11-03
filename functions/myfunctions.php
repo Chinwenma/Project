@@ -1,8 +1,8 @@
 <?php
 function redirect($url, $message)
 {
-    $_SESSEION['message']= $message;
-    header("Location: " .$url);
+    $_SESSION['message'] = $message;
+    header('Location:' .$url);
     exit();
 }
 ?>
