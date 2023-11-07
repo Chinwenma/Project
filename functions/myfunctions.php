@@ -1,4 +1,11 @@
 <?php
+include ('../config/dbconnect.php');
+function getALL($table)
+{
+    global $connection;
+    $query = "SELECT * FROM $table";
+    return $query_run = mysqli_query ($connection, $query);
+}
 function redirect($url, $message)
 {
     $_SESSION['message'] = $message;
