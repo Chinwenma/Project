@@ -4,6 +4,7 @@ include('includes/header.php');
 include('../middleware/adminMiddleware.php');
 
 
+
 ?>
 
 <div class="container">
@@ -22,7 +23,7 @@ include('../middleware/adminMiddleware.php');
                                 <th>NAME</th>
                                 <th>IMAGE</th>
                                 <th>STATUS</th>
-                                <th>EDIT</th>
+                                <th>ACTION</th>
 
                             </tr>
                         </thead>
@@ -37,11 +38,16 @@ include('../middleware/adminMiddleware.php');
                                         <td><?= $item['id'] ?></td>
                                         <td><?= $item['name'] ?></td>
                                         <td><img src="../uploads/<?= $item['image'] ?> " width="50px" height="50px" alt="<?= $item['name'] ?>"></td>
-                                        <td><?= $item['status'] == '0'? "Visible" : "Hidden" ?></td>
-                                        <td><a href="#" class="btn btn-success">Edit</a></td>
+                                        <td><?= $item['status']=='0'? "Visible" : "Hidden" ?></td>
+                                        <td><a href="edit-category.php?id=<?=$item['id'];?>" class="btn btn-success">Edit</a>
+                                           <form action="code.php" method="post">
+                                            <input type="hidden" name="category_id" value="<?= $item['id'] ?>">
+                                    <button type="submit" class="btn btn-danger" name="delete_category_btn">Delete<button>
+                                            </form>                                  
+                                        </td>
 
                                     </tr>
-                            <?php
+                            <?php   
                                 }
                             } else {
                                 echo "no result found";
