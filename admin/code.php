@@ -42,7 +42,7 @@ else if(isset($_POST['update_category_btn']))
     $meta_title = $_POST['meta_title'];
     $meta_description = $_POST['meta_description'];
     $meta_keywords = $_POST['meta_keywords'];
-    $staus = isset( $_POST['status'])   ? '1': '0';
+    $status = isset( $_POST['status'])   ? '1': '0';
     $popular = isset($_POST['popular'])  ? '1': '0';
 
     $new_image = $_FILES['image']['name'];
@@ -82,11 +82,11 @@ else if(isset($_POST['update_category_btn']))
 }
 else if(isset($_POST['delete_category_btn'])) 
 {
-    $category_id = mysqli_real_escape_string($connection,$_POST['category_id']);
+    $category_id = mysqli_real_escape_string($connection, $_POST['category_id']);
     $category_query =" SELECT * FROM categories WHERE id=$category_id";
     $category_query_run = mysqli_query($connection ,$category_query);
     $category_data = mysqli_fetch_array($category_query_run);
-$image =$category_data['image'];
+    $image =$category_data['image'];
 
 
 
