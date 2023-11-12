@@ -19,7 +19,10 @@ include('../middleware/adminMiddleware.php');
                    ?>
                         <div class="card">
                            <div class="card-header">
-                               <h3>Edit Category</h3>
+                               <h3>Edit Category
+                               <a href="category.php" class="btn btn-danger float-end">Back</a>
+
+                               </h3>
                             </div>
                             <div class="card-body">
                                 <form action="code.php" method="POST" enctype="multipart/form-data">
