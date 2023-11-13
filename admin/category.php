@@ -14,7 +14,7 @@ include('includes/header.php');
                     <h3>Categories</h3>
 
                 </div>
-                <div class="card-body">
+                <div class="card-body" id="category_table">
                     <table class="table table-bordered table-striped">
                         <thead>
                             <tr>
@@ -39,12 +39,14 @@ include('includes/header.php');
                                         <td><img src="../uploads/<?= $item['image'] ?> " width="50px" height="50px" alt="<?= $item['name'] ?>"></td>
                                         <td><?= $item['status']=='0'? "Visible" : "Hidden" ?></td>
                                         <td>
+                                        <a href="edit-category.php?id=<?=$item['id'];?>" class="btn btn-success">Edit</a>
+                                        
+                                        <button type="button" class="btn btn-sm btn-danger delete_category_btn" value="<?=$item['id'];?>">Delete</button>
+                                            <!-- <form action="code.php" method="POST" >
                                            
-                                            <form action="code.php" method="POST" >
-                                            <a href="edit-category.php?id=<?=$item['id'];?>" class="btn btn-success">Edit</a>
                                                 <input type="hidden" name="category_id" value="<?= $item['id']; ?>">
                                                 <button type="submit" class="btn btn-danger " name="delete_category_btn">Delete</button>
-                                            </form>
+                                            </form> -->
                                         </td>
 
                                     </tr>

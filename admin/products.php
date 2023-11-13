@@ -11,7 +11,7 @@ include('includes/header.php');
                     <h3>Products</h3>
 
                 </div>
-                <div class="card-body">
+                <div class="card-body" id="products_table">
                     <table class="table table-bordered table-striped">
                         <thead>
                             <tr>
