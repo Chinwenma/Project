@@ -1,19 +1,21 @@
 <?php
+session_start();
+
 include ('../config/dbconnect.php');
+
 function getALL($table)
 {
     global $connection;
     $query = "SELECT * FROM $table";
     return $query_run = mysqli_query ($connection, $query);
 }
+
 function getByID($table, $id)
 {
     global $connection;
     $query = "SELECT * FROM $table WHERE id='$id' ";
     return $query_run = mysqli_query ($connection, $query);
 }
-
-
 
 function redirect($url, $message)
 {
