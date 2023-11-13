@@ -3,7 +3,7 @@ session_start();
 
 include ('../config/dbconnect.php');
 
-function getALL($table)
+function getAll($table)
 {
     global $connection;
     $query = "SELECT * FROM $table";
@@ -17,10 +17,11 @@ function getByID($table, $id)
     return $query_run = mysqli_query ($connection, $query);
 }
 
+
 function redirect($url, $message)
 {
     $_SESSION['message'] = $message;
     header('Location:' .$url);
-    exit();
+    exit(0);
 }
 ?>

@@ -1,5 +1,5 @@
 <?php
-session_start();
+ session_start();
 include('includes/header.php'); ?>
 
 <div class="py-5">
@@ -18,7 +18,7 @@ include('includes/header.php'); ?>
                         unset($_SESSION['message']);
                     }
                 ?>
-                <h1>hell worl</h1>
+                <h1>hell world <i class="fa fa-user"></i></h1>
                 <button type="button" class="btn btn-primary">Primary</button>
             </div>
         </div>

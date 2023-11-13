@@ -29,7 +29,7 @@ include('includes/header.php');
 
                         <tbody>
                             <?php
-                            $category = getALL("categories");
+                            $category = getAll("categories");
                             if (mysqli_num_rows($category) > 0) {
                                 foreach ($category as $item) {
                             ?>

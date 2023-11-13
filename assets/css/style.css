@@ -2,21 +2,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Nunito , sans;
+  font-family: 'Roboto' , sans-serif;
 }
-body{
-  padding-top: 55px;
 
-}
-.navbar {
-  background-color: #D6D9E5;
-}
-.navbar-brand img {
-  object-fit: cover;
-}
-.navbar-brand a {
-  color: white;
-}
-.navbar-nav a {
-  color: #0A0D19;
-}
