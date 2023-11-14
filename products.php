@@ -39,12 +39,12 @@ $cat_id = $category['id'];
                     if (mysqli_num_rows($products) > 0) {
                         foreach ($products as $item) {
                     ?>
-                            <div class="col-md-3 mb-3">
-                                <a href="#">
+                            <div class="col-md-3 mb-2">
+                                <a href="product-view.php?product=<?= $item['slug']; ?> ">
                                     <div class="card shadow ">
                                         <div class="card-body">
-                                            <img src="uploads/<?= $item['image'] ?>" alt="" class="w-100">
-                                            <h4 class="text-center"><?= $item['name'] ?></h4>
+                                            <img src="uploads/<?= $item['image']; ?>" alt="" class="w-100">
+                                            <h4 class="text-center"><?= $item['name']; ?></h4>
 
                                         </div>
 
