@@ -23,7 +23,7 @@ if (isset($_GET['product'])) {
             </div>
         </div>
         <div class="bg-light py-4">
-            <div class="container">
+            <div class="container product_data">
                 <div class="row mt-5">
                     <div class="col-md-5">
                         <div class="shadow mt-5">
@@ -51,7 +51,7 @@ if (isset($_GET['product'])) {
                             <div class="col-md-4">
                                 <div class="input-group mb-3" style="width: 130px;">
                                     <button class="input-group-text decrement-btn">-</button>
-                                    <input type="text" class="form-control text-center bg-white" disabled value="1">
+                                    <input type="text" class="form-control text-center bg-white input-qty " disabled value="1">
                                     <button class="input-group-text increment-btn">+</button>
                                 </div>
                             </div>
