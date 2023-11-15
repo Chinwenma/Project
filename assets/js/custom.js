@@ -32,4 +32,36 @@ $(document).ready(function () {
         }
 
     });
+    $('.addToCartBtn').click(function (e) {
+        e.preventDefault();
+
+        let qty = $(this).closest('.product_data').find('.input-qty').val();
+        let prod_id = $(this).val();
+        $.ajax({
+            method: "POST",
+            url:"functions/handlecart.php",
+            data:{
+                "prod_id": prod_id,
+                "prod_qty" : qty,
+                "scope": "add"
+            },
+            success: function (response) {
+                if (response == 201) 
+                {
+                    alertify.success("Product Added to Cart");
+
+                }
+               else if (response == 401) {
+                alertify.success("login to cont");
+            }
+            else if (response == 500) {
+                alertify.success("something went wrong");
+            }
+            
+            }
+        });  
+
+    });
+    
+
 });

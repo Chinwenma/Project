@@ -9,7 +9,7 @@ if (isset($_GET['product'])) {
     $product = mysqli_fetch_array($product_data);
     if ($product) {
    ?>
-        <div class="py-3 bg-primary">
+        <div class="py-3 bg-primary" >
             <div class="container">
                 <h5 class="text-center text-white d-flex align-items-center justify-content-center" >
                     <a class="text-white" href="index.php">
@@ -22,7 +22,7 @@ if (isset($_GET['product'])) {
                 </h5>
             </div>
         </div>
-        <div class="bg-light py-4">
+        <div class=" py-4" style="background-color: burlywood;">
             <div class="container product_data">
                 <div class="row mt-5">
                     <div class="col-md-5">
@@ -57,7 +57,7 @@ if (isset($_GET['product'])) {
                             </div>
                             <div class="row mt-3">
                                 <div class="col-md-6">
-                                    <button class="btn btn-primary px-4"><i class="fa fa-shopping-cart me-2">  Add to Cart</i></button>
+                                    <button class="btn btn-primary px-4 addToCartBtn" value="<?= $product['id']; ?>"><i class="fa fa-shopping-cart me-2">  Add to Cart</i></button>
                                 </div>
                                 <div class="col-md-6">
                                     <button class="btn btn-danger px-4"><i class="fa fa-heart me-2"> Add to Whishlist</i></button>
