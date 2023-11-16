@@ -51,6 +51,11 @@ $(document).ready(function () {
                     alertify.success("Product Added to Cart");
 
                 }
+                else if (response == "existing") 
+                {
+                    alertify.error("Product Already to Cart");
+
+                }
                else if (response == 401) {
                 alertify.success("login to cont");
             }
