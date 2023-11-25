@@ -1,7 +1,8 @@
 <?php
 include('functions/userfunctions.php');
-
-include('includes/header.php'); ?>
+include('includes/header.php');
+include('authenticate.php'); 
+?>
 <div class="py-3 bg-primary">
     <div class="container">
         <h5 class="text-center text-white d-flex align-items-center justify-content-center" style="height: 30vh;">
@@ -48,6 +49,7 @@ include('includes/header.php'); ?>
                                 <div class="col-md-2">
                                     <img src="uploads/<?= $citem['image']; ?>" alt="" width="80px" class="mb-3 mt-3 ms-2">
                                 </div>
+
                                 <div class="col-md-3">
                                     <h5><?= $citem['name'] ?></h5>
                                 </div>
@@ -56,10 +58,11 @@ include('includes/header.php'); ?>
                                 </div>
 
                                 <div class="col-md-2">
+                                    <input type="hidden" class="prodId" value="<?= $citem['prod_id'] ?>">
                                     <div class="input-group mb-3" style="width: 130px;">
-                                        <button class="input-group-text decrement-btn">-</button>
-                                        <input type="text" class="form-control text-center bg-white input-qty " disabled value="<?= $citem['prod_qty']; ?> ">
-                                        <button class="input-group-text increment-btn">+</button>
+                                        <button class="input-group-text decrement-btn updateQty">-</button>
+                                        <input type="text" class="form-control text-center bg-white input-qty "  value="<?= $citem['prod_qty']; ?> ">
+                                        <button class="input-group-text increment-btn updateQty">+</button>
                                     </div>
                                 </div>
                                 <div class="col-md-2">
