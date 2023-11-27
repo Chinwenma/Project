@@ -1,7 +1,7 @@
 <?php
 include('functions/userfunctions.php');
 include('includes/header.php');
-include('authenticate.php'); 
+include('authenticate.php');
 ?>
 <div class="py-3 bg-primary">
     <div class="container">
@@ -37,44 +37,45 @@ include('authenticate.php');
                             <h6>Action</h6>
                         </div>
                     </div>
+                    <div id="mycart">
+                        <?php $items = getCartItems();
+                        foreach ($items as $citem) 
+                        {
+                            ?>
+                            <div class="card shadow-sm mb-3 product_data">
 
-                    <?php
-                    $items = getCartItems();
-                    foreach ($items as $citem) {
-                    ?>
-                        <div class="card shadow-sm mb-3 product_data">
 
+                                <div class="row align-items-center">
+                                    <div class="col-md-2">
+                                        <img src="uploads/<?= $citem['image']; ?>" alt="" width="80px" class="mb-3 mt-3 ms-2">
+                                    </div>
 
-                            <div class="row align-items-center">
-                                <div class="col-md-2">
-                                    <img src="uploads/<?= $citem['image']; ?>" alt="" width="80px" class="mb-3 mt-3 ms-2">
-                                </div>
+                                    <div class="col-md-3">
+                                        <h5><?= $citem['name'] ?></h5>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h5># <?= $citem['selling_price'] ?></h5>
+                                    </div>
 
-                                <div class="col-md-3">
-                                    <h5><?= $citem['name'] ?></h5>
-                                </div>
-                                <div class="col-md-3">
-                                    <h5># <?= $citem['selling_price'] ?></h5>
-                                </div>
-
-                                <div class="col-md-2">
-                                    <input type="hidden" class="prodId" value="<?= $citem['prod_id'] ?>">
-                                    <div class="input-group mb-3" style="width: 130px;">
-                                        <button class="input-group-text decrement-btn updateQty">-</button>
-                                        <input type="text" class="form-control text-center bg-white input-qty "  value="<?= $citem['prod_qty']; ?> ">
-                                        <button class="input-group-text increment-btn updateQty">+</button>
+                                    <div class="col-md-2">
+                                        <input type="hidden" class="prodId" value="<?= $citem['prod_id'] ?>">
+                                        <div class="input-group mb-3" style="width: 130px;">
+                                            <button class="input-group-text decrement-btn updateQty">-</button>
+                                            <input type="text" class="form-control text-center bg-white input-qty " value="<?= $citem['prod_qty']; ?> ">
+                                            <button class="input-group-text increment-btn updateQty">+</button>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <button class="btn btn-danger btn-sm deleteItem" value="<?= $citem["cid"] ?>">
+                                            <i class="fa fa-trash me-2"> Remove</i>
+                                        </button>
                                     </div>
                                 </div>
-                                <div class="col-md-2">
-                                    <button class="btn btn-danger btn-sm">
-                                        <i class="fa fa-trash me-2"> Remove</i>
-                                    </button>
-                                </div>
                             </div>
-                        </div>
-                    <?php
-                    }
-                    ?>
+                        <?php
+                        }
+                        ?>
+                    </div>
 
                 </div>
             </div>

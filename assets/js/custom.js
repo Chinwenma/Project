@@ -1,5 +1,8 @@
 $(document).ready(function () {
-    $('.increment-btn').click(function (e) {
+
+
+        $(document).on('click', '.increment-btn', function (e) {
+
         e.preventDefault();
 
         var qty = $(this).closest('.product_data').find('.input-qty').val();
@@ -16,8 +19,7 @@ $(document).ready(function () {
 
     });
 
-    $('.decrement-btn').click(function (e) {
-        e.preventDefault();
+    $(document).on('click', '.decrement-btn', function (e) {        e.preventDefault();
 
         var qty = $(this).closest('.product_data').find('.input-qty').val();
         var value = parseInt(qty, 10);
@@ -32,7 +34,7 @@ $(document).ready(function () {
         }
 
     });
-    $('.addToCartBtn').click(function (e) {
+        $(document).on('click', '.addToCartBtn', function (e) {
         e.preventDefault();
 
         var qty = $(this).closest('.product_data').find('.input-qty').val();
@@ -86,5 +88,30 @@ $(document).ready(function () {
         }
     });
 
+   });
+   $(document).on('click', '.deleteItem', function () {
+    var cart_id =$(this).val();
+    // alert(cart_id);
+    $.ajax({
+        method:"POST",
+        url:"functions/handlecart.php",
+        data:{
+            "cart_id": cart_id,
+            "scope": "delete"
+        },
+        success:function(response){
+            // alert(response);
+            if (response == 200) 
+            {
+                alertify.success("Product Deleted from Cart");
+                $('#mycart').load(location.href + " #mycart ")
+
+            }
+            else{
+                alertify.success(response);
+
+            }
+        }
+    });
    });
 });
