@@ -9,8 +9,8 @@ include('authenticate.php');
             <a href="index.php" class="text-white">
                 Home/
             </a>
-            <a href="cart.php" class="text-white">
-                Cart
+            <a href="myOrders.php" class="text-white">
+               My Orders
             </a>
         </h5>
     </div>
@@ -20,14 +20,8 @@ include('authenticate.php');
     <div class="container">
         <div class="card card-body shadow">
             <div class="row">
-                <div id="mycart">
                 <div class="col-md-12">
-                <?php $items = getCartItems();
-                 if (mysqli_num_rows($items) > 0)
-                 {
-?>
-
-                    <div class="row align-items-center">
+                    <!-- <div class="row align-items-center">
                         <div class="col-md-5">
                             <h6>Product</h6>
                         </div>
@@ -43,10 +37,8 @@ include('authenticate.php');
                             <h6>Action</h6>
                         </div>
                     </div>
-                    <div id="">
-                      
-
-                      <?php
+                    <div id="mycart">
+                        <?php $items = getCartItems();
                         foreach ($items as $citem) 
                         {
                             ?>
@@ -82,24 +74,12 @@ include('authenticate.php');
                             </div>
                         <?php
                         }
-                    
                         ?>
                     </div>
                        <div class="float-end">
                             <a href="checkout.php" class="btn btn-outline-primary
                             ">Proceed to checkout</a>
-                       </div>
-                       <?php
-                       }else {
-                        ?>
-                        <div class="card card-body text-center shadow">
-                            <h4 class="py-4">Your cart is empty</h4>
-                        </div>
-
-                        <?php
-                       }
-                       ?>
-                       </div>
+                       </div> -->
                 </div>
             </div>
         </div>
