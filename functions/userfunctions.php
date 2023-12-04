@@ -60,4 +60,13 @@ function redirect($url, $message)
     header('Location:' .$url);
     exit(0);
 }
+function checkVaildTrackingNo($trackingNo)
+{
+    global $connection;
+    $userId=$_SESSION['auth_user']['user_id']; 
+    $query="SELECT * FROM orders WHERE tracking_no='$trackingNo' AND user_id='$userId'";
+    return mysqli_query($connection, $query);
+
+
+}
 ?>

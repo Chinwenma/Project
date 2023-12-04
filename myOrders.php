@@ -41,12 +41,12 @@ include('authenticate.php');
                     foreach ($orders as  $item) {
                       ?>
                             <tr>
-                                <td><?=$item['id']?></td>
-                                <td><?=$item['tracking_no']?></td>
-                                <td><?=$item['total_price']?></td>
-                                <td><?=$item['created_at']?></td>
+                                <td><?=$item['id'];?></td>
+                                <td><?=$item['tracking_no'];?></td>
+                                <td><?=$item['total_price'];?></td>
+                                <td><?=$item['created_at'];?></td>
                                 <td>
-                                    <a href="#" class="btn btn-primary">View Details</a>
+                                    <a href="viewOrder.php?t=<?=$item['tracking_no'];?> " class="btn btn-primary">View Details</a>
                                 </td>
 
 
