@@ -1,25 +1,46 @@
 <?php
- session_start();
-include('includes/header.php'); ?>
+include('functions/userfunctions.php');
+include('includes/header.php');
+include('includes/slider.php'); 
+
+?>
 
 <div class="py-5">
     <div class="container">
         <div class="row">
-            <div class="col-md-12 text-center">
+            <div class="col-md-12">
+                <h4>Popular Products</h4>
+                <hr>
+                <div class="row">
                 <?php
-                   if (isset($_SESSION['message'])) 
+                $trendingProducts = getALLTrending();
+                if (mysqli_num_rows($trendingProducts) > 0) 
+                {
+                    foreach ($trendingProducts as $item) 
                     {
+
                         ?>
-                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                            <strong>Hey</strong> <?= $_SESSION['message'];?>.
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        <div class="col-md-3 mb-2">
+                            <a href="product-view.php?product=<?= $item['slug']; ?> ">
+                                <div class="card shadow ">
+                                    <div class="card-body">
+                                        <img src="uploads/<?= $item['image']; ?>" alt="" class="w-100">
+                                        <h4 class="text-center"><?= $item['name']; ?></h4>
+
+                                    </div>
+
+                                </div>
+                            </a>
                         </div>
-                        <?php
-                        unset($_SESSION['message']);
-                    }
+                <?php
+
+                    }               
+                
+                }
+              
                 ?>
-                <h1>hell world <i class="fa fa-user"></i></h1>
-                <button type="button" class="btn btn-primary">Primary</button>
+                </div>
+              
             </div>
         </div>
     </div>

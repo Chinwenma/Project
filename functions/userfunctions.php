@@ -9,6 +9,12 @@ function getALLActive($table)
     $query = "SELECT * FROM $table WHERE status = '0' ";
     return $query_run = mysqli_query ($connection, $query);
 }
+function getALLTrending()
+{
+    global $connection;
+    $query = "SELECT * FROM products WHERE trending = '1' ";
+    return $query_run = mysqli_query ($connection, $query);
+}
 function getSlugActive($table, $slug)
 {
     global $connection;
