@@ -24,8 +24,8 @@
             <?= $_SESSION['auth_user']['name'] ?>
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="myOrders.php">Orders</a></li>
+              <li><a class="dropdown-item" href="#">MyOrders</a></li>
               <li><a class="dropdown-item" href="signout.php">Sign Out</a></li>
             </ul>
           </li>

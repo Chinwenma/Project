@@ -24,4 +24,23 @@ function redirect($url, $message)
     header('Location:' .$url);
     exit(0);
 }
+function getAllOreders(){
+    global $connection;
+    $query = "SELECT * FROM orders WHERE status='0'";
+    return $query_run = mysqli_query ($connection, $query);  
+}
+function checkVaildTrackingNo($trackingNo)
+{
+    global $connection;
+    $query="SELECT * FROM orders WHERE tracking_no='$trackingNo'";
+    return mysqli_query($connection, $query);
+
+
+}
+function getOrederHistory()
+{
+    global $connection;
+    $query = "SELECT * FROM orders WHERE status !='0'";
+    return $query_run = mysqli_query ($connection, $query); 
+}
 ?>
